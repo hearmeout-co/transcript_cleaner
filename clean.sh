@@ -1,5 +1,7 @@
 INPUT_FILE=$1
 
+cp "$INPUT_FILE" "$INPUT_FILE.original"
+
 perl -i -pe 's/ kind of like / /g' "$INPUT_FILE"
 perl -i -pe 's/(?<!hat) kind of / /g' "$INPUT_FILE"
 perl -i -pe 's/(?:Um|Like),\s*([a-zA-Z])/\U$1/g' "$INPUT_FILE"
